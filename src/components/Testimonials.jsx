@@ -8,6 +8,8 @@ const Testimonials = () => {
   <div className='absolute inset-0 bg-cyan-600 opacity-50 z-10 w-[1170px] mx-40 bg-opacity-90'></div>
 </div>
 
+
+
   )
 }
 
