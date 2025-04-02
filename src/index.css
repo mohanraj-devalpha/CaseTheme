@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .before-arrow::before {
+    content: '>';
+    margin-right: 0.5rem;
+    color:blueviolet /* Adjust space between arrow and text */
+  }
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

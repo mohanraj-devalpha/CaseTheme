@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -34,6 +34,15 @@ const PrevArrow = ({ onClick, isVisible }) => {
 
 const Home = () => {
   const [hovered, setHovered] = useState(false);
+  const [animateFirstCase, setAnimateFirstCase] = useState(false);
+
+  useEffect(() => {
+      setTimeout(() => {
+        setAnimateFirstCase(true);
+      }, 200); // First image delay
+  
+      // Second image delay (slightly later for a staggered effect)
+    }, []);
 
   const settings = {
     dots: true,
@@ -60,7 +69,9 @@ const Home = () => {
             alt="Slide 1"
             className="w-full h-[600px] object-cover opacity-70 animate-jump"
           />
-          <div className="absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6">
+          <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
+                animateFirstCase ? "translate-x-10" : "-translate-x-full"
+              } `}>
             <h1 className="text-6xl font-bold mb-4 text-[#0F2142]">
               Let's Talk Business
             </h1>
@@ -80,12 +91,31 @@ const Home = () => {
         </div>
 
         {/* Slide 2 */}
-        <div>
+        <div className="relative">
           <img
             src={Image_2}
-            alt="Slide 2"
-            className="w-full h-[600px] object-cover animate-jump"
+            alt="Slide 1"
+            className="w-full h-[600px] object-cover  animate-jump"
           />
+          <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
+                animateFirstCase ? "translate-x-3" : "translate-x-8"
+              } `}>
+            <h1 className="text-6xl font-bold mb-4 text-[#0F2142]">
+              Let's Talk Business
+            </h1>
+            <p className="text-lg max-w-xl pb-14">
+              He was after the truth. At least, that's what he told himself. He
+              believed it, but any rational person on but any rational person on
+            </p>
+            <div className=" space-x-4">
+              <button className=" text-white py-2 px-10 mt-3 justify-center font-medium cursor-pointer bg-gradient-to-r from-indigo-500 to-blue-500 transition-all duration-300 ease-in-out hover:bg-gradient-to-l">
+                About Us
+              </button>
+              <button className="px-6 py-2 w-auto bg-[#EFB945]  text-white hover:bg-green-600">
+                Contact
+              </button>
+            </div>
+          </div>
         </div>
       </Slider>
     </div>

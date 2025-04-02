@@ -18,7 +18,7 @@ import {
 const Footer = () => {
   return (
     <div className="bg-black w-full text-white py-12 px-6 md:px-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
         <div className="space-y-6">
           <div className="flex items-center gap-3 text-2xl cursor-pointer">
             <FontAwesomeIcon icon={faInfinity} className="text-cyan-600 py-2" />
@@ -35,7 +35,7 @@ const Footer = () => {
           <h2 className="text-xl pb-4 font-bold">LINKS</h2>
           <ul className="space-y-2 text-[#8A8A8A] text-sm">
             {['Home', 'Services', 'About Us', 'Testimonials', 'News', 'Contact'].map((item, index) => (
-              <li key={index} className="hover:text-[#226ACB] cursor-pointer">{item}</li>
+              <li key={index} className="before-arrow hover:text-[#226ACB] before::content:['>'] cursor-pointer">{item}</li>
             ))}
           </ul>
         </div>
@@ -44,7 +44,7 @@ const Footer = () => {
           <h2 className="text-xl pb-4 font-bold">SUPPORT</h2>
           <ul className="space-y-2 text-[#8A8A8A] text-sm">
             {['Contact Us', 'Submit a Ticket', 'Visit Knowledge Base', 'Support System', 'Refund Policy', 'Professional Services'].map((item, index) => (
-              <li key={index} className="hover:text-[#226ACB] cursor-pointer">{item}</li>
+              <li key={index} className=" before-arrow hover:text-[#226ACB] cursor-pointer">{item}</li>
             ))}
           </ul>
         </div>
