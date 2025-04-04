@@ -56,7 +56,7 @@ const Home = () => {
   };
 
   return (
-    <div
+    <div id="home"
       className="w-full h-[600px] overflow-hidden relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -67,7 +67,7 @@ const Home = () => {
           <img
             src={Image_1}
             alt="Slide 1"
-            className="w-full h-[600px] object-cover opacity-70 animate-jump"
+            className="w-full h-[600px] object-cover opacity-70 "
           />
           <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
                 animateFirstCase ? "translate-x-10" : "-translate-x-full"
@@ -95,7 +95,7 @@ const Home = () => {
           <img
             src={Image_2}
             alt="Slide 1"
-            className="w-full h-[600px] object-cover  animate-jump"
+            className="w-full h-[600px] object-cover "
           />
           <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
                 animateFirstCase ? "translate-x-3" : "translate-x-8"

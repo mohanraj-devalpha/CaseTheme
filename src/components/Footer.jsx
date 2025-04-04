@@ -1,10 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import Image_1 from "../assets/Services_101.jpg";
 import Image_2 from "../assets/Services_102.jpg";
 import Image_3 from "../assets/Services_103.jpg";
 import Image_4 from "../assets/Services_104.jpg";
 import Image_5 from "../assets/Services_105.jpg";
-import Image_6 from "../assets/Services_106.jpg";
+import Image_6 from "../assets/projects/gallery.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfinity } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,9 +17,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <div className="bg-black w-full text-white py-12 px-6 md:px-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+      <div className="flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 max-w-[1170px]">
         <div className="space-y-6">
           <div className="flex items-center gap-3 text-2xl cursor-pointer">
             <FontAwesomeIcon icon={faInfinity} className="text-cyan-600 py-2" />
@@ -51,12 +56,33 @@ const Footer = () => {
 
         <div>
           <h2 className="text-xl pb-4 font-bold">GALLERY</h2>
-          <div className="grid grid-cols-3 gap-2">
-            {[Image_1, Image_2, Image_3, Image_4, Image_5, Image_6].map((img, index) => (
-              <img key={index} src={img} alt="Gallery" className="cursor-pointer w-20 h-20 object-cover" />
-            ))}
-          </div>
+          <div>
+      <div className="grid grid-cols-3 gap-2">
+        {[Image_1, Image_2, Image_3, Image_4, Image_5, Image_6].map((img, index) => (
+          <img 
+            key={index} 
+            src={img} 
+            alt="Gallery" 
+            className="cursor-pointer object-cover" 
+            onClick={() => setSelectedImage(img)} 
+          />
+        ))}
+      </div>
+
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+          <button 
+            className="absolute top-4 right-4 bg-white text-black px-3 py-1 rounded" 
+            onClick={() => setSelectedImage(null)}
+          >
+            ✖
+          </button>
+          <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full" />
         </div>
+      )}
+    </div>
+        </div>
+      </div>
       </div>
 
       <div className="bg-slate-900 mt-12 py-4 px-6 flex flex-col md:flex-row items-center justify-between text-sm">
