@@ -60,7 +60,6 @@ const Testimonials = () => {
           </button>
           <button onClick={nextTestimonial} className="p-2 bg-white text-blue-600 ">
             <FontAwesomeIcon icon={faChevronRight} /> 
-      
           </button>
         </div>
       </div>

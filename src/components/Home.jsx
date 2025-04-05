@@ -77,14 +77,14 @@ const Home = () => {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover opacity-70 fix"
           />
           <div
-            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
-              animateFirstCase ? "translate-x-10" : "translate-x-full"
+            className={`absolute inset-0 flex flex-col justify-center px-0 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
+              animateFirstCase ? "translate-x-10" : "translate-x-40"
             }`}
           >
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-[#0F2142]">
               Let's Talk Business
             </h1>
-            <p className="text-sm md:text-base lg:text-lg max-w-xl pb-10">
+            <p className="text-sm md:text-base lg:text-lg max-w-xl pb-10 hidden sm:block">
               He was after the truth. At least, that's what he told himself. He
               believed it, but any rational person on but any rational person on
             </p>
@@ -107,14 +107,14 @@ const Home = () => {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
           />
           <div
-            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
+            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-10  md:px-20 transition-transform duration-1000 ease-out ${
               animateFirstCase ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-[#0F2142]">
               Let's Talk Business
             </h1>
-            <p className="text-sm md:text-base lg:text-lg max-w-xl pb-10">
+            <p className="text-sm md:text-base lg:text-lg max-w-xl pb-10 hidden sm:block">
               He was after the truth. At least, that's what he told himself. He
               believed it, but any rational person on but any rational person on
             </p>

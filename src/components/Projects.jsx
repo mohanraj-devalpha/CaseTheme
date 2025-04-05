@@ -30,7 +30,6 @@ const Projects = () => {
   const [animateSecondCase, setAnimateSecondCase] = useState(false);
   const [isLoadingProjects, setIsLoadingProjects] = useState(false);
 
-
   const projectCards = [
     {
       title: "Pied Piper",
@@ -128,33 +127,32 @@ const Projects = () => {
 
         {/* Show "More" Button if there are more than 6 cards and not showing all */}
         {!showAll && projectCards.length > 6 && (
-  <button
-    onClick={() => {
-      setIsLoadingProjects(true);
-      setTimeout(() => {
-        setShowAll(true);
-        setIsLoadingProjects(false);
-      }, 1000); // simulate loading delay
-    }}
-    className={`mt-8 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium ${
-      isLoadingProjects ? "opacity-50 cursor-not-allowed" : ""
-    }`}
-    disabled={isLoadingProjects}
-  >
-    {isLoadingProjects ? (
-      <div className="flex items-center justify-center">
-        <svg
-          className="animate-spin h-5 w-5 mr-3 border-4 border-gray-200 border-t-blue-600 rounded-full"
-          viewBox="0 0 24 24"
-        />
-        "Loading..."
-      </div>
-    ) : (
-      "Load More"
-    )}
-  </button>
-)}
-
+          <button
+            onClick={() => {
+              setIsLoadingProjects(true);
+              setTimeout(() => {
+                setShowAll(true);
+                setIsLoadingProjects(false);
+              }, 1000); // simulate loading delay
+            }}
+            className={`mt-8 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium ${
+              isLoadingProjects ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={isLoadingProjects}
+          >
+            {isLoadingProjects ? (
+              <div className="flex items-center justify-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 border-4 border-gray-200 border-t-blue-600 rounded-full"
+                  viewBox="0 0 24 24"
+                />
+                "Load More"
+              </div>
+            ) : (
+              "Load More"
+            )}
+          </button>
+        )}
       </div>
 
       <div className="relative mt-20 sm:mt-60 w-full">
@@ -165,7 +163,7 @@ const Projects = () => {
             className="w-full h-full object-cover absolute inset-0 z-0"
           />
 
-          <div className="relative z-10 bg-cyan-60 bg-custom-gradient bg-opacity-90 flex justify-center items-center py-20 px-32 lg:mx-24 ">
+          <div className="relative z-10 bg-cyan-60 bg-custom-gradient bg-opacity-90 flex justify-center items-center py-20 px-5 sm:px-32 lg:mx-24 ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left max-w-[1170px] w-full">
               {/* Team Members */}
               <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-5">

@@ -8,7 +8,7 @@ const About = () => {
     <div id="about" >
       <div className="grid grid-cols-1 lg:grid-cols-2 ">
         <div className=" bg-blue-linear pt-10 pb-28">
-          <span className="text-cyan-500 opacity-35 text-[300px] ">About</span>
+          <span className="text-cyan-500 opacity-35 text-7xl sm:text-9xl  md:text-[250px] ">About</span>
 
         </div>
         <div className="relative">
