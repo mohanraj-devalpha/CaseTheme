@@ -58,7 +58,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="fixed z-50 w-full">
+    <div className="fixed z-50 w-full shadow-xl">
       {/* Top Bar Section */}
       <div className="bg-black text-white px-4">
         <div className="max-w-[1170px] mx-auto">

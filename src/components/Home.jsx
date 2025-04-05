@@ -9,7 +9,7 @@ import Image_2 from "../assets/Home_102.png";
 const NextArrow = ({ onClick, isVisible }) => {
   return (
     <button
-      className={`absolute top-1/2 right-2 md:right-4 z-10 transform -translate-y-1/2 bg-black/50 text-white px-3 md:px-4 py-1 md:py-2 text-xl md:text-2xl font-bold transition duration-300 ${
+      className={`absolute top-1/2 right-2 md:right-4 z-10 transform -translate-y-1/2 bg-black/50 text-white px-3 md:px-4 py-1 md:py-3 text-xl md:text-2xl font-bold transition duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       } hover:bg-black`}
       onClick={onClick}
@@ -22,7 +22,7 @@ const NextArrow = ({ onClick, isVisible }) => {
 const PrevArrow = ({ onClick, isVisible }) => {
   return (
     <button
-      className={`absolute top-1/2 left-2 md:left-4 z-10 transform -translate-y-1/2 bg-black/50 text-white px-3 md:px-4 py-1 md:py-2 text-xl md:text-2xl font-bold transition duration-300 ${
+      className={`absolute top-1/2 left-2 md:left-4 z-10 transform -translate-y-1/2 bg-black/50 text-white px-3 md:px-4 py-1  md:py-3 text-xl md:text-2xl font-bold transition duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       } hover:bg-black`}
       onClick={onClick}
