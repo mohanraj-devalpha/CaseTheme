@@ -97,15 +97,15 @@ const Projects = () => {
         </p>
       </div>
       <div className="flex flex-col items-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1170px] pt-14 gap-8 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1170px] pt-14 gap-8">
           {visibleCards.map((card, index) => (
             <div className="relative" key={index}>
               <img
                 src={card.image}
                 alt={card.title}
-                className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer shadow-2xl"
+                className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer shadow-xl"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-all duration-300 ease-in-out transform hover:-translate-y-2">
+              <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-all duration-300 ease-in-out">
 
                 <div className="flex justify-between mx-10 mt-24 cursor-pointer">
                   <div>

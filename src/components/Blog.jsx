@@ -77,7 +77,7 @@ const Blog = () => {
               .map((post, index) => (
                 <div
                   key={index}
-                  className="border-2 flex-cols gap-5 shadow-2xl overflow-hidden"
+                  className="border-2 flex-cols gap-5  overflow-hidden cursor-pointer"
                 >
                   <div className="overflow-hidden">
                     <img
