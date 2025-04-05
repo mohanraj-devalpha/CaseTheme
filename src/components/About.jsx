@@ -6,9 +6,9 @@ import Services_1 from "../assets/projects/Testimonials.jpg";
 const About = () => {
   return (
     <div id="about" >
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 ">
         <div className="bg-cyan-500">
-          <span className="text-cyan-300 text-6xl">About</span>
+          <span className="text-cyan-400 text-9xl">About</span>
 
         </div>
         <div className="relative">

@@ -109,7 +109,7 @@ const Blog = () => {
         {!isVisible && blogPosts.length > 3 && (
           <button
             onClick={handleButtonClick}
-            className={`bg-blue-500 bg-gradient-to-r font-bold text-sm text-white px-10 py-4 ${
+            className={`bg-blue-500 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 font-bold text-sm text-white px-10 py-4 ${
               isLoading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
@@ -129,17 +129,35 @@ const Blog = () => {
       </div>
 
       {/* company banner */}
-      <div className="flex justify-center py-20">
-        <div className="max-w-[1170px] bg-blue-400 ">
-          <div className="flex gap-36 py-10">
-          <img src={brand1} alt="" />
-          <img src={brand2} alt="" />
-          <img src={brand5} alt="" />
-          <img src={brand4} alt="" />
-          <img src={brand} alt="" />
+      <div className="flex justify-center py-20 px-4">
+        <div className="max-w-[1170px] w-full bg-blue-400">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-20 py-10">
+            <img
+              src={brand1}
+              alt=""
+              className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
+            <img
+              src={brand2}
+              alt=""
+              className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
+            <img
+              src={brand5}
+              alt=""
+              className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
+            <img
+              src={brand4}
+              alt=""
+              className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
+            <img
+              src={brand}
+              alt=""
+              className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
           </div>
-          
-
         </div>
       </div>
     </div>

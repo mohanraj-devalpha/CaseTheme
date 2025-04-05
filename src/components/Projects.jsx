@@ -28,7 +28,6 @@ import Case_2 from "../assets/projects/blog2.jpg";
 const Projects = () => {
   const [animateFirstCase, setAnimateFirstCase] = useState(false);
   const [animateSecondCase, setAnimateSecondCase] = useState(false);
-  
 
   const projectCards = [
     {
@@ -73,6 +72,11 @@ const Projects = () => {
     },
   ];
 
+
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCards = showAll ? projectCards : projectCards.slice(0, 6);
+
   useEffect(() => {
     setTimeout(() => {
       setAnimateFirstCase(true);
@@ -92,34 +96,48 @@ const Projects = () => {
           believe in the power of simple and easy communication.
         </p>
       </div>
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1170px] pt-14 gap-8">
-          {projectCards.map((card, index) => (
-            <div className="relative" key={index}>
-              <img
-                src={card.image}
-                alt={card.title}
-                className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer"
-              />
-              <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-opacity duration-300 ease-in-out">
-                <div className="flex justify-between mx-10 mt-24 cursor-pointer">
-                  <div>
-                    <h2 className="text-xl text-white hover:text-orange-400 font-medium">
-                      {card.title}
-                    </h2>
-                    <p className="text-orange-400 cursor-pointer">
-                      {card.category}
-                    </p>
-                  </div>
-                  <FontAwesomeIcon
-                    icon={faLink}
-                    className="border px-3 text-white w-7 h-7 hover:bg-orange-600 py-3 rounded-full"
-                  />
+        {visibleCards.map((card, index) => (
+          <div className="relative" key={index}>
+            <img
+              src={card.image}
+              alt={card.title}
+              className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer"
+            />
+            <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-opacity duration-300 ease-in-out">
+              <div className="flex justify-between mx-10 mt-24 cursor-pointer">
+                <div>
+                  <h2 className="text-xl text-white hover:text-orange-400 font-medium">
+                    {card.title}
+                  </h2>
+                  <p className="text-orange-400 cursor-pointer">
+                    {card.category}
+                  </p>
                 </div>
+                <FontAwesomeIcon
+                  icon={faLink}
+                  className="border px-3 text-white w-7 h-7 hover:bg-orange-600 py-3 rounded-full"
+                />
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+
+
+      </div>
+
+      {/* Show "More" Button if there are more than 6 cards and not showing all */}
+      {!showAll && projectCards.length > 6 && (
+        <button
+          onClick={() => setShowAll(true)}
+          className="mt-8 px-10 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium"
+
+        >
+          Load More
+        </button>
+      )}
+
       </div>
 
       <div className="relative mt-20 sm:mt-60 w-full">
@@ -185,9 +203,9 @@ const Projects = () => {
       </div>
       <div>
         <div className="flex justify-center">
-          <div className="flex py-10 max-w-[1170px] justify-center items-center">
+          <div className="flex py-10 max-w-[1170px] justify-center items-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="relative ">
+              <div className="relative">
                 <img
                   src={Case_1}
                   alt=""
@@ -195,8 +213,10 @@ const Projects = () => {
                     animateFirstCase ? "translate-x-0" : "-translate-x-full"
                   }`}
                 />
-                <div className="absolute top-0 left-[-50px] w-[649px] h-[400px] flex items-center justify-center">
-                  <div className="text-[198px]  text-[#F7F7F8]">CASE STUDY</div>
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+                  <div className="text-[48px] sm:text-[72px] md:text-[100px] lg:text-[140px] xl:text-[180px] 2xl:text-[198px] text-[#F7F7F8] font-bold text-center leading-none">
+                    CASE STUDY
+                  </div>
                 </div>
               </div>
 
