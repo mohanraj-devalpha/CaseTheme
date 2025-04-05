@@ -19,9 +19,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 
-
-
-
 const NavBar = () => {
   
 const[activeSection, setActiveSection] = useState("home"); 
@@ -170,7 +167,7 @@ const[activeSection, setActiveSection] = useState("home");
         </div>
 
         {/* Social Icons */}
-        <div className="flex space-x-5 text-black text-l p-8">
+        <div className="flex space-x-5 text-black text-l p-[34px]">
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className="hover:text-orange-500 cursor-pointer transition-colors duration-500"

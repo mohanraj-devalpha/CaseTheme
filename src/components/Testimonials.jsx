@@ -18,7 +18,7 @@ const testimonials = [
       "Working with Westy was an absolute pleasure. Their creativity and attention to detail exceeded our expectations, making our project a huge success!",
     name: "Arya Stark",
     company: "Needle Works",
-    image: Person,
+    image: Person2,
   },
 ];
 

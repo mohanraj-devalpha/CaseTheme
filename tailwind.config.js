@@ -34,9 +34,19 @@ export default {
         BlogP: "#828282",
       },
       animation: {
+        grow: 'grow 2s ease-out forwards',
+        slide: 'slide 2s ease-out forwards',
         jump: "jump 1.5s infinite ease-in-out",
       },
       keyframes: {
+        grow: {
+          '0%': { width: '0%' },
+          '100%': { width: 'var(--grow-width)' },
+        },
+        slide: {
+          '0%': { left: '0%' },
+          '100%': { left: 'var(--grow-left)' },
+        },
         jump: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-5px)" }, // Adjust intensity

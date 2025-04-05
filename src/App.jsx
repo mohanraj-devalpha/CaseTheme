@@ -47,7 +47,7 @@ const App = () => {
 
               <div
                 id="testimonials"
-                className="w-full relative place-items-center h-[550px] border-2 border-amber-950"
+                className="w-full relative place-items-center h-[550px]"
               >
                 <img
                   src={Image_1}

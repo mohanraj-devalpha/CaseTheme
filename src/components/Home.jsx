@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div id="home"
-      className="w-full h-[600px] top-44 overflow-hidden relative"
+      className="w-full h-[600px] top-44 overflow-hidden relative "
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

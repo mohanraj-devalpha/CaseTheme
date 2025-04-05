@@ -72,7 +72,6 @@ const Projects = () => {
     },
   ];
 
-
   const [showAll, setShowAll] = useState(false);
 
   const visibleCards = showAll ? projectCards : projectCards.slice(0, 6);
@@ -98,46 +97,42 @@ const Projects = () => {
       </div>
       <div className="flex flex-col items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1170px] pt-14 gap-8">
-        {visibleCards.map((card, index) => (
-          <div className="relative" key={index}>
-            <img
-              src={card.image}
-              alt={card.title}
-              className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer"
-            />
-            <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-opacity duration-300 ease-in-out">
-              <div className="flex justify-between mx-10 mt-24 cursor-pointer">
-                <div>
-                  <h2 className="text-xl text-white hover:text-orange-400 font-medium">
-                    {card.title}
-                  </h2>
-                  <p className="text-orange-400 cursor-pointer">
-                    {card.category}
-                  </p>
+          {visibleCards.map((card, index) => (
+            <div className="relative" key={index}>
+              <img
+                src={card.image}
+                alt={card.title}
+                className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer"
+              />
+              <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-opacity duration-300 ease-in-out">
+                <div className="flex justify-between mx-10 mt-24 cursor-pointer">
+                  <div>
+                    <h2 className="text-xl text-white hover:text-orange-400 font-medium">
+                      {card.title}
+                    </h2>
+                    <p className="text-orange-400 cursor-pointer">
+                      {card.category}
+                    </p>
+                  </div>
+                  <FontAwesomeIcon
+                    icon={faLink}
+                    className="border px-3 text-white w-7 h-7 hover:bg-orange-600 py-3 rounded-full"
+                  />
                 </div>
-                <FontAwesomeIcon
-                  icon={faLink}
-                  className="border px-3 text-white w-7 h-7 hover:bg-orange-600 py-3 rounded-full"
-                />
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
-
-      </div>
-
-      {/* Show "More" Button if there are more than 6 cards and not showing all */}
-      {!showAll && projectCards.length > 6 && (
-        <button
-          onClick={() => setShowAll(true)}
-          className="mt-8 px-10 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium"
-
-        >
-          Load More
-        </button>
-      )}
-
+        {/* Show "More" Button if there are more than 6 cards and not showing all */}
+        {!showAll && projectCards.length > 6 && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="mt-8 px-10 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium"
+          >
+            Load More
+          </button>
+        )}
       </div>
 
       <div className="relative mt-20 sm:mt-60 w-full">
@@ -276,41 +271,75 @@ const Projects = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <div className="space-y-6">
+                <div className="">
                   {/* Consulting */}
-                  <div className="flex flex-col items-start gap-2">
+                  <div className="flex flex-col items-start ">
                     <span className="text-lg font-bold text-gray-800 w-32">
                       Consulting
                     </span>
-                    <div className="relative w-full">
-                      <div className="absolute top-1/2 w-full border-t-2 border-yellow-500"></div>
-                      <div className="absolute left-[95%] top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full">
+                    <div className="relative w-full h-12">
+                      <div
+                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
+                        style={{ width: "0%", "--grow-width": "95%" }}
+                      ></div>
+                      <div
+                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
+                        style={{ left: "0%", "--grow-left": "95%" }}
+                      >
                         95%
                       </div>
                     </div>
                   </div>
 
                   {/* Finance */}
-                  <div className="flex flex-col items-start gap-2">
+                  <div className="flex flex-col items-start">
                     <span className="text-lg font-bold text-gray-800 w-32">
                       Finance
                     </span>
-                    <div className="relative w-full">
-                      <div className="absolute top-1/2 w-full border-t-2 border-yellow-500"></div>
-                      <div className="absolute left-[85%] top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full">
+                    <div className="relative w-full h-12">
+                      <div
+                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
+                        style={{
+                          width: "0%",
+                          "--grow-width": "85%",
+                          animationDelay: "0.3s",
+                        }}
+                      ></div>
+                      <div
+                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
+                        style={{
+                          left: "0%",
+                          "--grow-left": "85%",
+                          animationDelay: "0.3s",
+                        }}
+                      >
                         85%
                       </div>
                     </div>
                   </div>
 
                   {/* Business */}
-                  <div className="flex flex-col items-start gap-2">
+                  <div className="flex flex-col items-start">
                     <span className="text-lg font-bold text-gray-800 w-32">
                       Business
                     </span>
-                    <div className="relative w-full">
-                      <div className="absolute top-1/2 w-full border-t-2 border-yellow-500"></div>
-                      <div className="absolute left-[90%] top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full">
+                    <div className="relative w-full h-12">
+                      <div
+                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
+                        style={{
+                          width: "0%",
+                          "--grow-width": "90%",
+                          animationDelay: "0.6s",
+                        }}
+                      ></div>
+                      <div
+                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
+                        style={{
+                          left: "0%",
+                          "--grow-left": "90%",
+                          animationDelay: "0.6s",
+                        }}
+                      >
                         90%
                       </div>
                     </div>
