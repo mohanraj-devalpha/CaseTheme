@@ -119,7 +119,7 @@ const Blog = () => {
                   className="animate-spin h-5 w-5 mr-3 border-4 border-gray-200 border-t-blue-600 rounded-full"
                   viewBox="0 0 24 24"
                 />
-                <span>Loading...</span>
+                "MORE NEWS"
               </div>
             ) : (
               "MORE NEWS"

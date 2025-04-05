@@ -40,8 +40,6 @@ const Home = () => {
       setTimeout(() => {
         setAnimateFirstCase(true);
       }, 200); // First image delay
-  
-      // Second image delay (slightly later for a staggered effect)
     }, []);
 
   const settings = {
@@ -57,7 +55,7 @@ const Home = () => {
 
   return (
     <div id="home"
-      className="w-full h-[600px] overflow-hidden relative"
+      className="w-full h-[600px] top-44 overflow-hidden relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -70,7 +68,7 @@ const Home = () => {
             className="w-full h-[600px] object-cover opacity-70 "
           />
           <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
-                animateFirstCase ? "translate-x-10" : "-translate-x-full"
+                animateFirstCase ? "translate-x-10" : "translate-x-full"
               } `}>
             <h1 className="text-6xl font-bold mb-4 text-[#0F2142]">
               Let's Talk Business
@@ -98,7 +96,7 @@ const Home = () => {
             className="w-full h-[600px] object-cover "
           />
           <div className={`absolute inset-0 flex flex-col left-48 justify-center text-neutral-950 px-6 transition-transform duration-1000 ease-out ${
-                animateFirstCase ? "translate-x-3" : "translate-x-8"
+                animateFirstCase ? "translate-x-0" : "translate-x-full"
               } `}>
             <h1 className="text-6xl font-bold mb-4 text-[#0F2142]">
               Let's Talk Business

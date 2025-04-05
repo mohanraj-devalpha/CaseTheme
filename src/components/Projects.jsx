@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import CaseStudy from "./Casestudy/CaseStudy.jsx";
-
+// import CaseStudy from "./Casestudy/CaseStudy.jsx";
+// import Image_3 from "../assets/projects/image_103.jpg";
+import Counter from "./Counter.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,16 +12,16 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck, faLink } from "@fortawesome/free-solid-svg-icons";
+import Image_2 from "../assets/projects/blog1.jpg";
 
 import Image_1 from "../assets/projects/Testimonials.jpg";
-import Image_2 from "../assets/projects/pro_2.jpg";
+import Image_3 from "../assets/projects/blog2.jpg";
 
-import Image_3 from "../assets/projects/image_103.jpg";
-import Image_4 from "../assets/projects/image_104.jpg";
-import Image_5 from "../assets/projects/image_105.jpg";
-import Image_6 from "../assets/projects/image_106.jpg";
-import Image_7 from "../assets/projects/image_107.jpg";
-import Image_8 from "../assets/projects/image_108.jpg";
+import Image_4 from "../assets/projects/proje.jpg";
+import Image_5 from "../assets/projects/pro.jpg";
+import Image_6 from "../assets/projects/pr.jpg";
+import Image_7 from "../assets/projects/p.jpg";
+import Image_8 from "../assets/projects/projet3.jpg";
 import Case_1 from "../assets/projects/blog1.jpg";
 import Case_2 from "../assets/projects/blog2.jpg";
 
@@ -33,34 +34,42 @@ const Projects = () => {
     {
       title: "Pied Piper",
       category: "Consulting",
+      image: Image_6,
     },
     {
       title: "Marketing for Aerospace",
       category: "Business, Events",
+      image: Image_3,
     },
     {
       title: "Event Management",
       category: "Events",
+      image: Image_4,
     },
     {
       title: "MacBook Screen Concept",
       category: "Consulting",
+      image: Image_5,
     },
     {
       title: "Aerospace Clients",
       category: "Consulting, Events",
+      image: Image_6,
     },
     {
       title: "Business Growth",
       category: "Business",
+      image: Image_7,
     },
     {
       title: "City Finance Grows",
       category: "Events, Finance",
+      image: Image_8,
     },
     {
       title: "Investment Marketing",
       category: "Business",
+      image: Image_2,
     },
   ];
 
@@ -88,7 +97,7 @@ const Projects = () => {
           {projectCards.map((card, index) => (
             <div className="relative" key={index}>
               <img
-                src={Image_1}
+                src={card.image}
                 alt={card.title}
                 className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer"
               />
@@ -129,9 +138,8 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <span className="text-4xl sm:text-5xl text-[#EFB945] font-bold">
-                    184
-                  </span>
+                  <Counter end={183} durarion={1000} />
+
                   <p className="text-white text-lg">Team Members</p>
                 </div>
               </div>
@@ -143,9 +151,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <span className="text-4xl sm:text-5xl text-[#EFB945] font-bold">
-                    968
-                  </span>
+                  <Counter end={968} durarion={1000} />
                   <p className="text-white text-lg">Satisfied Clients</p>
                 </div>
               </div>
@@ -157,9 +163,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <span className="text-4xl sm:text-5xl text-[#EFB945] font-bold">
-                    69
-                  </span>
+                  <Counter end={69} durarion={1000} />
                   <p className="text-white text-lg">Language Support</p>
                 </div>
               </div>
@@ -171,9 +175,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <span className="text-4xl sm:text-5xl text-[#EFB945] font-bold">
-                    1500
-                  </span>
+                  <Counter end={1500} durarion={1000} />
                   <p className="text-white text-lg">Successful Projects</p>
                 </div>
               </div>

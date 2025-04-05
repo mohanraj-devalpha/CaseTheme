@@ -8,12 +8,12 @@ const About = () => {
     <div id="about" >
       <div className="grid grid-cols-2">
         <div className="bg-cyan-500">
-          <span>About</span>
+          <span className="text-cyan-300 text-6xl">About</span>
 
         </div>
         <div className="relative">
         <img src={Services_1} alt="Service Image" className="content-stretch" />
-        <button className="absolute top-1/2 left-1/2">
+        <button className="absolute top-1/2 left-1/2 bg-white w-20 h-20 rounded-full">
         <FontAwesomeIcon
               icon={faPlay}
               className="text-yellow-400 text-2xl w-full"

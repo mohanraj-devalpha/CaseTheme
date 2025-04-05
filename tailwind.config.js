@@ -12,7 +12,7 @@ export default {
         'custom-gradient': 'linear-gradient(to right, rgba(34, 106, 203, 0.88), rgba(27, 155, 209, 0.88))',
       },
       screens: {
-        nav: "1144px",
+        nav: "1259px",
         stat: "990px",
         stat1:"1286px",
         BlogHS: "22px",

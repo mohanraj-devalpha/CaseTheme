@@ -39,9 +39,10 @@ const App = () => {
           path="/"
           element={
             <>
-              <Home />
-              <Services />
-              {/* <About /> */}
+             <section id="home"><Home /></section> 
+              <section id="services"><Services /></section>
+
+              sections<About />
               <Projects />
 
               <div
