@@ -42,7 +42,7 @@ const App = () => {
              <section id="home"><Home /></section> 
               <section id="services"><Services /></section>
 
-              sections<About />
+              <About />
               <Projects />
 
               <div
