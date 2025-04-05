@@ -48,7 +48,7 @@ const Testimonials = () => {
         <img
           src={testimonials[index].image}
           alt={testimonials[index].name}
-          className="rounded-full w-16 h-16 md:w-20 md:h-20 mt-6 border-2 border-white"
+          className="rounded-full w-20 h-16 md:w-24 md:h-24 mt-6 border-2 border-white"
         />
         <p className="text-lg font-semibold">{testimonials[index].name}</p>
         <p className="text-sm">{testimonials[index].company}</p>

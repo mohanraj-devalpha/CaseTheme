@@ -109,7 +109,7 @@ const Blog = () => {
         {!isVisible && blogPosts.length > 3 && (
           <button
             onClick={handleButtonClick}
-            className={`bg-blue-500 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 font-bold text-sm text-white px-10 py-4 ${
+            className={`bg-blue-500 bg-gradient-to-r from-indigo-500 to-blue-500 hover:bg-gradient-to-l hover:to-blue-800 font-bold text-sm text-white px-10 py-4 ${
               isLoading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
@@ -130,7 +130,7 @@ const Blog = () => {
 
       {/* company banner */}
       <div className="flex justify-center py-20 px-4">
-        <div className="max-w-[1170px] w-full bg-blue-400">
+        <div className="max-w-[1170px] w-full  bg-blue-linear">
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-20 py-10">
             <img
               src={brand1}

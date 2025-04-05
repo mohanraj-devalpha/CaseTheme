@@ -21,7 +21,7 @@ const Services = () => {
 
   return (
     <div id="services" className="py-20 text-center text-4xl font-bold mx-auto mt-40">
-      <div className="pb-6  mx-[15px] xl:mx-[500px]">
+      <div className="pb-6 mx-[15px]">
         <h2 className="pb-4 text-[#092A48]">Our Services</h2>
         <p className="font-normal text-base text-[#6A6A6A] ">
           We understand the importance of approaching each work integrally and
@@ -40,8 +40,8 @@ const Services = () => {
         </div>
         
         
-        <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full">❮</button>
-        <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full">❯</button>
+        <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2  text-blue-500 p-2 rounded-full">❮</button>
+        <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2  text-blue-500 p-2 rounded-full">❯</button>
       </div>
       </div>
     </div>

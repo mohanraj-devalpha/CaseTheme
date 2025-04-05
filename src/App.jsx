@@ -42,7 +42,7 @@ const App = () => {
              <section id="home"><Home /></section> 
               <section id="services"><Services /></section>
 
-              <About />
+              {/* <About /> */}
               <Projects />
 
               <div
@@ -71,20 +71,9 @@ const App = () => {
       {showButton && (
         <button
           onClick={scrollToTop}
-          style={{
-            position: "fixed",
-            bottom: "40px",
-            right: "40px",
-            zIndex: "99",
-            backgroundColor: "#007BFF",
-            color: "#fff",
-            border: "none",
-            borderRadius: "100%",
-            padding: "20px 25px",
-            cursor: "pointer",
-          }}
-        >
-          ^
+          className="fixed bottom-10 right-10 z-[99] bg-[#007BFF] text-white border-none rounded-full px-7 py-5 cursor-pointer text-[20px] font-bold -rotate-90"
+
+        >  >
         </button>
       )}
     </BrowserRouter>

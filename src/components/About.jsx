@@ -6,9 +6,9 @@ import Services_1 from "../assets/projects/Testimonials.jpg";
 const About = () => {
   return (
     <div id="about" >
-      <div className="grid grid-cols-2 ">
-        <div className="bg-cyan-500">
-          <span className="text-cyan-400 text-9xl">About</span>
+      <div className="grid grid-cols-1 lg:grid-cols-2 ">
+        <div className=" bg-blue-linear pt-10 pb-28">
+          <span className="text-cyan-500 opacity-35 text-[300px] ">About</span>
 
         </div>
         <div className="relative">

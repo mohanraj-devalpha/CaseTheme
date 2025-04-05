@@ -19,6 +19,9 @@ export default {
 
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to right, rgba(34, 106, 203, 0.88), rgba(27, 155, 209, 0.88))',
+        'blue-linear': 'linear-gradient(to right, #226acb, #1b9bd1)',
+        
+
       },
       screens: {
         nav: "1259px",
@@ -32,6 +35,7 @@ export default {
         primaryYellow: "#EFB945", // Custom color
         BlogH: "#443f45",
         BlogP: "#828282",
+        navclr: "#092a48",
       },
       animation: {
         grow: 'grow 2s ease-out forwards',

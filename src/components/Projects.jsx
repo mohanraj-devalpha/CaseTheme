@@ -28,6 +28,8 @@ import Case_2 from "../assets/projects/blog2.jpg";
 const Projects = () => {
   const [animateFirstCase, setAnimateFirstCase] = useState(false);
   const [animateSecondCase, setAnimateSecondCase] = useState(false);
+  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
+
 
   const projectCards = [
     {
@@ -90,7 +92,7 @@ const Projects = () => {
     <div id="projects" className=" px-[15px] justify-center py-24">
       <div className="text-4xl justify-center w-auto text-center ">
         <h2 className="font-bold text-[#092A48] mb-[14px]">Recent Projects</h2>
-        <p className="font-normal text-base text-[#6A6A6A]">
+        <p className="font-normal text-base text-[#6A6A6A] mx-16 lg:mx-48">
           We understand the importance of approaching each work integrally and
           believe in the power of simple and easy communication.
         </p>
@@ -126,24 +128,45 @@ const Projects = () => {
 
         {/* Show "More" Button if there are more than 6 cards and not showing all */}
         {!showAll && projectCards.length > 6 && (
-          <button
-            onClick={() => setShowAll(true)}
-            className="mt-8 px-10 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium"
-          >
-            Load More
-          </button>
-        )}
+  <button
+    onClick={() => {
+      setIsLoadingProjects(true);
+      setTimeout(() => {
+        setShowAll(true);
+        setIsLoadingProjects(false);
+      }, 1000); // simulate loading delay
+    }}
+    className={`mt-8 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium ${
+      isLoadingProjects ? "opacity-50 cursor-not-allowed" : ""
+    }`}
+    disabled={isLoadingProjects}
+  >
+    {isLoadingProjects ? (
+      <div className="flex items-center justify-center">
+        <svg
+          className="animate-spin h-5 w-5 mr-3 border-4 border-gray-200 border-t-blue-600 rounded-full"
+          viewBox="0 0 24 24"
+        />
+        "Loading..."
+      </div>
+    ) : (
+      "Load More"
+    )}
+  </button>
+)}
+
       </div>
 
       <div className="relative mt-20 sm:mt-60 w-full">
-        <img
-          src={Image_1}
-          alt="Service Image"
-          className="relative w-full h-[739px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[272px] object-cover"
-        />
-        <div className="flex justify-center items-center ">
-          <div className="absolute inset-0 flex justify-center items-center mx-0 lg:mx-20 bg-cyan-600 bg-opacity-90 px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+        <div className="relative w-full">
+          <img
+            src={Image_1}
+            alt="Service Image"
+            className="w-full h-full object-cover absolute inset-0 z-0"
+          />
+
+          <div className="relative z-10 bg-cyan-60 bg-custom-gradient bg-opacity-90 flex justify-center items-center py-20 px-32 lg:mx-24 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left max-w-[1170px] w-full">
               {/* Team Members */}
               <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-5">
                 <FontAwesomeIcon
@@ -151,8 +174,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <Counter end={183} durarion={1000} />
-
+                  <Counter end={183} duration={1000} />
                   <p className="text-white text-lg">Team Members</p>
                 </div>
               </div>
@@ -164,7 +186,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <Counter end={968} durarion={1000} />
+                  <Counter end={968} duration={1000} />
                   <p className="text-white text-lg">Satisfied Clients</p>
                 </div>
               </div>
@@ -176,7 +198,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <Counter end={69} durarion={1000} />
+                  <Counter end={69} duration={1000} />
                   <p className="text-white text-lg">Language Support</p>
                 </div>
               </div>
@@ -188,7 +210,7 @@ const Projects = () => {
                   className="text-4xl text-white border-4 p-4"
                 />
                 <div>
-                  <Counter end={1500} durarion={1000} />
+                  <Counter end={1500} duration={1000} />
                   <p className="text-white text-lg">Successful Projects</p>
                 </div>
               </div>
@@ -196,6 +218,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
       <div>
         <div className="flex justify-center">
           <div className="flex py-10 max-w-[1170px] justify-center items-center px-4">
