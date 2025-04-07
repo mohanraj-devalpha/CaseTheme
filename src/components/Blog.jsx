@@ -130,31 +130,31 @@ const Blog = () => {
 
       {/* company banner */}
       <div className="flex justify-center py-20 px-4">
-        <div className="max-w-[1170px] w-full  bg-blue-linear">
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-20 py-10">
+        <div className="max-w-[1170px] w-full bg-blue-linear">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-10 lg:gap-20 py-10 place-items-center">
             <img
               src={brand1}
-              alt=""
+              alt="Brand 1"
               className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
             <img
               src={brand2}
-              alt=""
+              alt="Brand 2"
               className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
             <img
               src={brand5}
-              alt=""
+              alt="Brand 5"
               className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
             <img
               src={brand4}
-              alt=""
+              alt="Brand 4"
               className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
             <img
               src={brand}
-              alt=""
+              alt="Brand"
               className="w-20 sm:w-24 md:w-28 lg:w-32 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
           </div>

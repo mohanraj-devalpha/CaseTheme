@@ -13,8 +13,8 @@ import Image_1 from "../src/assets/projects/Testimonials.jpg";
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null); // State for image preview
 
-  // Show button when user scrolls down
   useEffect(() => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 200);
@@ -23,7 +23,6 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -39,12 +38,10 @@ const App = () => {
           path="/"
           element={
             <>
-             <section id="home"><Home /></section> 
-              <section id="services"><Services /></section>
-
+              <Home />
+              <Services />
               <About />
               <Projects />
-
               <div
                 id="testimonials"
                 className="w-full relative place-items-center h-[550px]"
@@ -56,24 +53,24 @@ const App = () => {
                 />
                 <Testimonials />
               </div>
-
               <Blog />
               <Contact />
-              <Footer />
+              <Footer
+                selectedImage={selectedImage}
+                setSelectedImage={setSelectedImage}
+              />
             </>
           }
         />
-        {/* You can define more routes for individual pages/components if needed */}
-        {/* <Route path="/about" element={<About />} /> */}
       </Routes>
 
-      {/* Scroll-to-top button */}
-      {showButton && (
+      {/* Scroll-to-top button (hidden if image preview is open) */}
+      {showButton && !selectedImage && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-10 right-10 z-[99]  bg-custom-gradient bg-opacity-100 text-white border-none rounded-full px-4 py-2 cursor-pointer text-[20px] font-bold "
-
-        >  ^
+          className="fixed bottom-10 right-10 z-[99] bg-custom-gradient bg-opacity-100 text-white border-none rounded-full px-4 py-2 cursor-pointer text-[20px] font-bold"
+        >
+          ^
         </button>
       )}
     </BrowserRouter>

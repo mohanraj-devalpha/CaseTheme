@@ -1,6 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquarePhoneFlip,
@@ -26,6 +24,7 @@ const NavBar = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
+      setIsOpen(false);
     }
   };
 
@@ -40,13 +39,12 @@ const NavBar = () => {
         "blog",
         "contact",
       ];
-
       for (let id of sections) {
         const section = document.getElementById(id);
         if (section) {
           const rect = section.getBoundingClientRect();
           if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(id); // ✅ track scroll-based active section
+            setActiveSection(id);
             break;
           }
         }
@@ -57,48 +55,51 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
   return (
     <div className="fixed z-50 w-full shadow-xl">
       {/* Top Bar Section */}
-      <div className="bg-black text-white px-4">
-        <div className="max-w-[1170px] mx-auto">
-          <div className="flex flex-wrap items-center justify-between py-3.5 text-sm">
-            {/* Left Section (Phone & Hours) */}
-            <div className="flex flex-wrap justify-center md:justify-start w-full md:w-auto">
-              <span className="flex items-center mx-3 my-1">
-                <FontAwesomeIcon
-                  icon={faSquarePhoneFlip}
-                  className="text-yellow-500 mr-2 text-lg"
-                />
-                Phone: +123 (4567) 890
-              </span>
-              <span className="flex items-center mx-3 my-1">
-                <FontAwesomeIcon
-                  icon={faClock}
-                  className="h-6 w-4 text-yellow-500 mr-2"
-                />
-                Mon - Fri: 9 am - 7 pm
-              </span>
-            </div>
-
-            {/* Right Section (Address) */}
-            <div className="flex justify-center md:justify-end w-full md:w-auto mt-2 md:mt-0">
-              <span className="flex items-center mx-3">
-                <FontAwesomeIcon
-                  icon={faMapMarkerAlt}
-                  className="text-yellow-500 mr-2 text-lg"
-                />
-                921 St. Pault Ave, Main Street, USA
-              </span>
+      {!isOpen && (
+        <div className="bg-black text-white px-4">
+          <div className="max-w-[1170px] mx-auto">
+            <div className="flex flex-wrap items-center justify-between py-3.5 text-sm">
+              <div className="flex flex-wrap justify-center md:justify-start w-full md:w-auto">
+                <span className="flex items-center mx-3 my-1">
+                  <FontAwesomeIcon
+                    icon={faSquarePhoneFlip}
+                    className="text-yellow-500 mr-2 text-lg"
+                  />
+                  Phone: +123 (4567) 890
+                </span>
+                <span className="flex items-center mx-3 my-1">
+                  <FontAwesomeIcon
+                    icon={faClock}
+                    className="h-6 w-4 text-yellow-500 mr-2"
+                  />
+                  Mon - Fri: 9 am - 7 pm
+                </span>
+              </div>
+              <div className="flex justify-center md:justify-end w-full md:w-auto mt-2 md:mt-0">
+                <span className="flex items-center mx-3">
+                  <FontAwesomeIcon
+                    icon={faMapMarkerAlt}
+                    className="text-yellow-500 mr-2 text-lg"
+                  />
+                  921 St. Pault Ave, Main Street, USA
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Sticky Nav Section */}
-      <div className="bg-navclr nav:bg-white shadow-md px-4 sm:px-6 md:px-16 py-4 top-15  z-50">
+      {/* Main Navigation */}
+      <div className="bg-navclr nav:bg-white shadow-md px-4 sm:px-6 md:px-16 py-4 z-50">
         <div className="max-w-[1170px] mx-auto flex justify-between items-center">
-          {/* Branding */}
+          {/* Logo */}
           <div className="flex items-center font-bold text-xl sm:text-2xl cursor-pointer">
             <FontAwesomeIcon
               icon={faInfinity}
@@ -107,7 +108,7 @@ const NavBar = () => {
             <h2 className="text-white nav:text-black">UNFINITY+</h2>
           </div>
 
-          {/* Hamburger Icon (Mobile) */}
+          {/* Hamburger Icon */}
           <button
             className="nav:hidden text-xl sm:text-2xl focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
@@ -118,20 +119,23 @@ const NavBar = () => {
             />
           </button>
 
-          {/* Main Navigation */}
+          {/* Navigation Menu */}
           <div
-            className={`fixed flex  top-0 left-0 h-full max-w-screen-nav bg-white shadow-lg transform ${
-              isOpen ? "translate-x-0" : "-translate-x-96"
-            } transition-transform duration-500 ease-in-out nav:static nav:transform-none nav:w-auto nav:h-auto lg:bg-transparent lg:shadow-none`}
+            className={`fixed flex flex-col top-0 left-0 h-full w-1/2 z-50 bg-white shadow-lg transform ${
+              isOpen ? "translate-x-0" : "-translate-x-full"
+            } transition-transform duration-500 ease-in-out nav:static nav:transform-none nav:w-auto nav:h-auto nav:bg-transparent nav:shadow-none nav:flex-row nav:items-center`}
           >
+            {/* Close Button for Mobile */}
             <button
-              className="absolute top-4 right-4 text-2xl text-gray-600 lg:hidden bg-orange-400 p-2 border-2"
+              className="absolute top-4 right-4 text-2xl text-gray-600 nav:hidden bg-orange-400 p-2 border-2"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >
               ✕
             </button>
-            <div className="flex flex-col space-y-4 p-5 text-gray-400 text-lg font-medium lg:flex-row lg:space-y-0 lg:space-x-6">
+
+            {/* Navigation Links */}
+            <div className="flex flex-col space-y-4 p-5 text-gray-400 text-lg font-medium nav:flex-row nav:space-y-0 nav:space-x-6">
               {[
                 "Home",
                 "Services",
@@ -143,7 +147,6 @@ const NavBar = () => {
               ].map((item, index) => {
                 const id = item.toLowerCase();
                 const isActive = activeSection === id;
-
                 return (
                   <span
                     key={index}
@@ -159,7 +162,7 @@ const NavBar = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-5 text-black text-l p-[34px]">
+            <div className="flex space-x-5 text-black text-l p-5">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 className="hover:text-orange-500 cursor-pointer transition-colors duration-500"

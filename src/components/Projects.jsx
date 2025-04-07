@@ -99,16 +99,18 @@ const Projects = () => {
       <div className="flex flex-col items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1170px] pt-14 gap-8">
           {visibleCards.map((card, index) => (
-            <div className="relative" key={index}>
+            <div
+              className="relative group overflow-hidden  shadow-xl"
+              key={index}
+            >
               <img
                 src={card.image}
                 alt={card.title}
-                className="transition-transform duration-300 ease-in-out bg-[#226ACB] hover:opacity-80 cursor-pointer shadow-xl"
+                className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:opacity-80 cursor-pointer "
               />
-              <div className="absolute inset-0 bg-[#226ACB] mx-2 my-2 opacity-0 hover:opacity-85 transition-all duration-300 ease-in-out">
-
-                <div className="flex justify-between mx-10 mt-24 cursor-pointer">
-                  <div>
+              <div className="absolute inset-0 bg-[#226ACB] transform translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-90 transition-all duration-500 ease-in-out ">
+                <div className="flex justify-between items-center px-6 h-full">
+                  <div className="mt-auto pb-8">
                     <h2 className="text-xl text-white hover:text-orange-400 font-medium">
                       {card.title}
                     </h2>
@@ -126,7 +128,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Show "More" Button if there are more than 6 cards and not showing all */}
         {!showAll && projectCards.length > 6 && (
           <button
             onClick={() => {
@@ -134,7 +135,7 @@ const Projects = () => {
               setTimeout(() => {
                 setShowAll(true);
                 setIsLoadingProjects(false);
-              }, 1000); // simulate loading delay
+              }, 1000);
             }}
             className={`mt-8 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white shadow-md transition-all duration-300 font-medium ${
               isLoadingProjects ? "opacity-50 cursor-not-allowed" : ""
@@ -281,10 +282,12 @@ const Projects = () => {
         </div>
 
         {/* case study */}
+        {/* Case Study 2 */}
         <div className="flex justify-center">
-          <div className="flex max-w-[1170px]">
+          <div className="flex py-10 max-w-[1170px] justify-center items-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="px-4 pt-8 pb-16 space-y-6">
+              {/* Text Section */}
+              <div className="py-10 px-4 space-y-6">
                 <button className="border-2 border-blue-600 cursor-pointer hover:bg-sky-600 px-10 py-2 text-blue-500 font-medium hover:text-white">
                   Study 02
                 </button>
@@ -293,86 +296,49 @@ const Projects = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <div className="">
-                  {/* Consulting */}
-                  <div className="flex flex-col items-start ">
-                    <span className="text-lg font-bold text-gray-800 w-32">
-                      Consulting
-                    </span>
-                    <div className="relative w-full h-12">
-                      <div
-                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
-                        style={{ width: "0%", "--grow-width": "95%" }}
-                      ></div>
-                      <div
-                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
-                        style={{ left: "0%", "--grow-left": "95%" }}
-                      >
-                        95%
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Finance */}
-                  <div className="flex flex-col items-start">
-                    <span className="text-lg font-bold text-gray-800 w-32">
-                      Finance
-                    </span>
-                    <div className="relative w-full h-12">
-                      <div
-                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
-                        style={{
-                          width: "0%",
-                          "--grow-width": "85%",
-                          animationDelay: "0.3s",
-                        }}
-                      ></div>
-                      <div
-                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
-                        style={{
-                          left: "0%",
-                          "--grow-left": "85%",
-                          animationDelay: "0.3s",
-                        }}
-                      >
-                        85%
+                {/* Skills Progress Bars */}
+                <div className="space-y-6">
+                  {[
+                    { title: "Consulting", value: "95%", delay: "0s" },
+                    { title: "Finance", value: "85%", delay: "0.3s" },
+                    { title: "Business", value: "90%", delay: "0.6s" },
+                  ].map(({ title, value, delay }) => (
+                    <div key={title} className="flex flex-col items-start">
+                      <span className="text-lg font-bold text-gray-800 w-32">
+                        {title}
+                      </span>
+                      <div className="relative w-full h-12">
+                        <div
+                          className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
+                          style={{
+                            width: "0%",
+                            "--grow-width": value,
+                            animationDelay: delay,
+                          }}
+                        ></div>
+                        <div
+                          className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
+                          style={{
+                            left: "0%",
+                            "--grow-left": value,
+                            animationDelay: delay,
+                          }}
+                        >
+                          {value}
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Business */}
-                  <div className="flex flex-col items-start">
-                    <span className="text-lg font-bold text-gray-800 w-32">
-                      Business
-                    </span>
-                    <div className="relative w-full h-12">
-                      <div
-                        className="absolute top-1/2 border-t-2 border-yellow-500 animate-grow"
-                        style={{
-                          width: "0%",
-                          "--grow-width": "90%",
-                          animationDelay: "0.6s",
-                        }}
-                      ></div>
-                      <div
-                        className="absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-sm font-bold w-12 h-12 flex items-center justify-center rounded-full animate-slide"
-                        style={{
-                          left: "0%",
-                          "--grow-left": "90%",
-                          animationDelay: "0.6s",
-                        }}
-                      >
-                        90%
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-              <div className="relative overflow-hidden">
+
+              {/* Image Section */}
+              <div className="relative">
                 <img
                   src={Case_2}
                   alt=""
-                  className={`w-full px-3 transition-transform duration-1000 ease-out ${
+                  className={`object-cover px-3 transition-transform duration-1000 ease-out ${
                     animateSecondCase ? "translate-x-0" : "translate-x-full"
                   }`}
                 />
