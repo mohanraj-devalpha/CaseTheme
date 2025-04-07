@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden relative"
+      className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden relative pt-32"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -77,7 +77,7 @@ const Home = () => {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover opacity-70 fix"
           />
           <div
-            className={`absolute inset-0 flex flex-col justify-center px-0 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
+            className={`absolute top-40 md:top-40 left-10 flex flex-col justify-center px-0 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
               animateFirstCase ? "translate-x-10" : "translate-x-40"
             }`}
           >
@@ -107,7 +107,7 @@ const Home = () => {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
           />
           <div
-            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-10  md:px-20 transition-transform duration-1000 ease-out ${
+            className={`absolute top-40 md:top-40 left-10 flex flex-col justify-center px-4 sm:px-10  md:px-20 transition-transform duration-1000 ease-out ${
               animateFirstCase ? "translate-x-0" : "translate-x-full"
             }`}
           >

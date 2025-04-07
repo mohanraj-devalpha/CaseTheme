@@ -59,7 +59,7 @@ const Blog = () => {
 
   return (
     <div id="blog">
-      <div className="pt-20 text-center text-4xl font-bold mx-auto place-items-center">
+      <div className="pt-52 text-center text-4xl font-bold mx-auto place-items-center">
         <div className="pb-6 mx-[15px]">
           <h2 className="pb-4 text-[#092A48]">News & Articles</h2>
           <p className="font-normal text-base text-[#6A6A6A] max-w-[550px]">

@@ -44,7 +44,7 @@ const App = () => {
               <Projects />
               <div
                 id="testimonials"
-                className="w-full relative place-items-center h-[550px]"
+                className="w-full relative place-items-center h-[550px] pt-28"
               >
                 <img
                   src={Image_1}

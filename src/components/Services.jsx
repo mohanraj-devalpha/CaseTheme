@@ -20,7 +20,7 @@ const Services = () => {
   };
 
   return (
-    <div id="services" className="py-20 text-center text-4xl font-bold mx-auto scroll-mt-24 pt-6 mt-">
+    <div id="services" className="py-20 text-center text-4xl font-bold mx-auto scroll-mt-24 pt-28">
       <div className="pb-6 mx-[15px]">
         <h2 className="pb-4 text-[#092A48]">Our Services</h2>
         <p className="font-normal text-base text-[#6A6A6A] ">

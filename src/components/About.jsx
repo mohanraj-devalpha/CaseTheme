@@ -5,7 +5,7 @@ import Services_1 from "../assets/projects/Testimonials.jpg";
 
 const About = () => {
   return (
-    <div id="about" >
+    <div id="about" className="pt-28" >
       <div className="grid grid-cols-1 lg:grid-cols-2 ">
         <div className=" bg-blue-linear pt-10 pb-28">
           <span className="text-cyan-500 opacity-35 text-7xl sm:text-9xl  md:text-[250px] ">About</span>

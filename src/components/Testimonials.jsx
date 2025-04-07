@@ -36,7 +36,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="absolute inset-0 flex justify-center items-center">
+    <div className="absolute inset-0 flex justify-center items-center mt-28 mb-[-112px]">
       <div className="relative bg-custom-gradient max-w-[1170px] text-center flex flex-col justify-center items-center h-full px-10 md:px-28 text-white bg-opacity-90">
         <FontAwesomeIcon
           icon={faQuoteRight}
