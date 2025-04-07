@@ -88,10 +88,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="projects" className=" px-[15px] justify-center py-24 pt-32">
+    <div id="projects" className=" px-[15px] justify-center pt-16">
       <div className="text-4xl justify-center w-auto text-center ">
         <h2 className="font-bold text-[#092A48] mb-[14px]">Recent Projects</h2>
-        <p className="font-normal text-base text-[#6A6A6A] mx-16 lg:mx-48">
+        <p className="font-normal text-base text-[#6A6A6A] mx-0 lg:mx-48">
           We understand the importance of approaching each work integrally and
           believe in the power of simple and easy communication.
         </p>
@@ -157,7 +157,7 @@ const Projects = () => {
         )}
       </div>
 
-      <div className="relative  sm:mt-60 w-full">
+      <div className="relative mt-10  sm:mt-16 w-full">
         <div className="relative w-full">
           <img
             src={Image_1}
@@ -166,7 +166,7 @@ const Projects = () => {
           />
 
           <div className="relative z-10 bg-cyan-60 bg-custom-gradient bg-opacity-90 flex justify-center items-center py-20  px-5 sm:px-32 lg:mx-24 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left max-w-[1170px] w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 text-center sm:text-left max-w-[1170px] w-full">
               {/* Team Members */}
               <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-5">
                 <FontAwesomeIcon
@@ -221,8 +221,8 @@ const Projects = () => {
 
       <div>
         <div className="flex justify-center pt-24">
-          <div className="flex py-10 max-w-[1170px] justify-center items-center px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="flex py-0 max-w-[1170px] justify-center items-center px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative">
                 <img
                   src={Case_1}
@@ -284,10 +284,10 @@ const Projects = () => {
         {/* case study */}
         {/* Case Study 2 */}
         <div className="flex justify-center">
-          <div className="flex py-10 max-w-[1170px] justify-center items-center px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="flex max-w-[1170px] justify-center items-center px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Text Section */}
-              <div className="py-10 px-4 space-y-6">
+              <div className="py-5 md:py-10 px-4 space-y-6">
                 <button className="border-2 border-blue-600 cursor-pointer hover:bg-sky-600 px-10 py-2 text-blue-500 font-medium hover:text-white">
                   Study 02
                 </button>
@@ -334,7 +334,7 @@ const Projects = () => {
               </div>
 
               {/* Image Section */}
-              <div className="relative">
+              <div className="relative py-10">
                 <img
                   src={Case_2}
                   alt=""

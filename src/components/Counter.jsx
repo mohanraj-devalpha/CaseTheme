@@ -19,7 +19,7 @@ const Counter = ({ end = 100, duration = 3000 }) => {
     return () => clearInterval(timer);
   }, [end, duration]);
 
-  console.log(count);
+  
   {
     
   }

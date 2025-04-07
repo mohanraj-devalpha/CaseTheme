@@ -28,7 +28,9 @@ export default {
       },
       screens: {
         nav: "1259px",
+        case: "1088px",
         stat: "990px",
+        statcontent: "1199px",
         stat1:"1286px",
         BlogHS: "22px",
 

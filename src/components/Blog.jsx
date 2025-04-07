@@ -58,8 +58,8 @@ const Blog = () => {
   ];
 
   return (
-    <div id="blog">
-      <div className="pt-52 text-center text-4xl font-bold mx-auto place-items-center">
+    <div id="blog" className="">
+      <div className="pt-28 text-center text-4xl font-bold mx-auto place-items-center">
         <div className="pb-6 mx-[15px]">
           <h2 className="pb-4 text-[#092A48]">News & Articles</h2>
           <p className="font-normal text-base text-[#6A6A6A] max-w-[550px]">
@@ -129,7 +129,7 @@ const Blog = () => {
       </div>
 
       {/* company banner */}
-      <div className="flex justify-center py-20 px-4">
+      <div className="flex justify-center  px-4">
         <div className="max-w-[1170px] w-full bg-blue-linear">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-10 lg:gap-20 py-10 place-items-center">
             <img

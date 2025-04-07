@@ -97,7 +97,7 @@ const NavBar = () => {
       )}
 
       {/* Main Navigation */}
-      <div className="bg-navclr nav:bg-white shadow-md px-4 sm:px-6 md:px-16 z-50">
+      <div className="bg-navclr nav:bg-white shadow-md py-5 px-5 sm:px-6 md:px-16 z-50">
         <div className="max-w-[1170px] mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center font-bold text-xl sm:text-2xl cursor-pointer">
@@ -127,7 +127,7 @@ const NavBar = () => {
           >
             {/* Close Button for Mobile */}
             <button
-              className="absolute top-4 right-4 text-2xl text-gray-600 nav:hidden bg-orange-400 p-2 border-2"
+              className="absolute top-4 right-4 text-sm text-gray-600 nav:hidden bg-yellow-400 p-1 border-2"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >

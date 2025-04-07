@@ -77,7 +77,7 @@ const Home = () => {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover opacity-70 fix"
           />
           <div
-            className={`absolute top-40 md:top-40 left-10 flex flex-col justify-center px-0 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
+            className={`absolute top-40 md:top-40 left-0 md:left-10 flex flex-col justify-center px-0 sm:px-10 md:px-20 transition-transform duration-1000 ease-out ${
               animateFirstCase ? "translate-x-10" : "translate-x-40"
             }`}
           >
